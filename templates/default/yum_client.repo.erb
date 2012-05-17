@@ -1,0 +1,5 @@
+[<%= node[:yum][:repo] %>]
+name=<%= node[:yum][:repo_name] %>
+baseurl=<%= node[:yum][:repo_url] %>
+enabled=1
+gpgcheck=<%= node[:yum][:gpgcheck] %>

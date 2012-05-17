@@ -1,0 +1,32 @@
+= DESCRIPTION:
+Includes recipes to create a Yum repo and configure Yum clients.
+The Yum repo is created from a directory of files.
+
+= REQUIREMENTS:
+Requires nginx.
+
+= ATTRIBUTES: 
+
+# Yum client attributes.
+
+yum[:repo_url] - "http://login/rpms"
+
+# Yum repo attributes.
+
+yum[:repo_base_directory] - the web root where repos will be stored
+yum[:upload_packages_dir] - directory which contains packages to copy into the repo
+
+= USAGE:
+
+Example JSON config for the yum::repo recipe:
+
+"yum": {
+        "repo_base_directory": "/var/packages/rpms",
+        "upload_packages_dir": "/root/openstack-rpms"
+    }
+
+Example JSON config for the yum::client recipe:
+
+"yum": {
+       "repo_url": "http://login/rpms"
+     }
